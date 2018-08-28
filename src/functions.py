@@ -36,5 +36,5 @@ def gradient_descent(X, y, theta, alpha, num_iters):
         # make gradient broadcast-able to theta
         gradient = np.reshape(gradient, (1,))
         theta = theta - gradient
-        j_history[i] = compute_cost(X, y, theta)  # [0]?
+        j_history[i] = compute_cost(X, y, theta)[0]
     return theta, j_history
