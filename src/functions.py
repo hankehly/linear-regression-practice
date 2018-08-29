@@ -22,7 +22,6 @@ def read_dataset_2():
 
 def compute_cost(X, y, theta):
     m = len(y)
-    # h = np.transpose(theta) * X
     h = X.dot(theta)
     error_sqr = (h - y) ** 2
     return np.sum(error_sqr, axis=0) / (2 * m)
@@ -32,7 +31,6 @@ def gradient_descent(X, y, theta, alpha, num_iters):
     m = len(y)
     j_history = np.zeros((num_iters, 1))
     for i in range(num_iters):
-        # h = np.transpose(theta) * X
         h = X.dot(theta)
         errors = h - y
         gradient = (alpha / m) * np.transpose(X).dot(errors)
