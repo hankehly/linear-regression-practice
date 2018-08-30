@@ -43,3 +43,4 @@ h = X.dot(theta)
 - How do you plot the regression line after you finish modifying theta?
 - How do you get all the values of a single column from a (n, 2+) shaped matrix in numpy?
 - Why do we need the 1 again?
+- What threshold value should you use to determine the accuracy of a prediction?
