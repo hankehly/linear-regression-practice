@@ -40,3 +40,5 @@ h = X.dot(theta)
 ```
 
 - When computing the gradient, why do we not need to use np.sum?
+- How do you plot the regression line after you finish modifying theta?
+- How do you get all the values of a single column from a (n, 2+) shaped matrix in numpy?
