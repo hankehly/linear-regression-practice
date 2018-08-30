@@ -37,3 +37,7 @@ def gradient_descent(X, y, theta, alpha, num_iters):
         theta = theta - gradient
         j_history[i] = compute_cost(X, y, theta)
     return theta, j_history
+
+
+def predict(val, theta):
+    return np.array([1, val]).dot(theta)
