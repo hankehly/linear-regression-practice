@@ -7,6 +7,19 @@ import numpy as np
 data_dir = os.path.join(os.path.dirname(os.path.realpath(__file__)), '../data')
 
 
+def read_dataset_1():
+    df = pd.read_csv(os.path.join(data_dir, 'dataset_1/train.csv'))
+    X = np.vstack(df['x']) / 10
+    X_0 = np.ones(X.shape)
+    X = np.hstack((X_0, X))
+    y = np.vstack(df['y']) / 10
+    n = X.shape[1]
+    theta = np.zeros((n, 1))
+    alpha = 0.03
+    num_iters = 1500
+    return X, y, theta, alpha, num_iters
+
+
 def read_dataset_2():
     df = pd.read_csv(os.path.join(data_dir, 'dataset_2/ex1data1.txt'), names=['X', 'y'], header=None)
     X = np.vstack(df['X'])
@@ -20,17 +33,21 @@ def read_dataset_2():
     return X, y, theta, alpha, num_iters
 
 
-def read_dataset_1():
-    df = pd.read_csv(os.path.join(data_dir, 'dataset_1/train.csv'))
-    X = np.vstack(df['x']) / 10
-    X_0 = np.ones(X.shape)
+def read_dataset_3():
+    df = pd.read_csv(os.path.join(data_dir, 'dataset_3/ex1data2.txt'), names=['size', 'beds', 'price'], header=None)
+    X = np.array(df[['size', 'beds']])
+    X_0 = np.ones((X.shape[0], 1))
     X = np.hstack((X_0, X))
-    y = np.vstack(df['y']) / 10
+    y = np.vstack(df['price'])
     n = X.shape[1]
     theta = np.zeros((n, 1))
-    alpha = 0.03
+    alpha = 0.01
     num_iters = 1500
     return X, y, theta, alpha, num_iters
+
+
+def normalize_features(X):
+    pass
 
 
 def compute_cost(X, y, theta):
