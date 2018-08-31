@@ -21,6 +21,9 @@ def read_dataset_1():
 
 
 def read_dataset_2():
+    """
+    univariate dataset (1 feature column, 1 label column)
+    """
     df = pd.read_csv(os.path.join(data_dir, 'dataset_2/ex1data1.txt'), names=['X', 'y'], header=None)
     X = np.vstack(df['X'])
     X_0 = np.ones(X.shape)
@@ -34,6 +37,9 @@ def read_dataset_2():
 
 
 def read_dataset_3():
+    """
+    multivariate dataset (2 feature columns, 1 label column)
+    """
     df = pd.read_csv(os.path.join(data_dir, 'dataset_3/ex1data2.txt'), names=['size', 'beds', 'price'], header=None)
     X = np.array(df[['size', 'beds']])
     X_0 = np.ones((X.shape[0], 1))
